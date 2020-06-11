@@ -6,5 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
         FileSystemUtils.listLocalDrives();
+        FileSystemUtils.searchFileByName("sf.txt", "C:\\testSearch");
     }
 }
