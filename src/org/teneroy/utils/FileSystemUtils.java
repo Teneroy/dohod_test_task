@@ -2,6 +2,7 @@ package org.teneroy.utils;
 
 import javax.swing.filechooser.FileSystemView;
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.FileSystems;
 import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
@@ -82,8 +83,8 @@ public class FileSystemUtils {
             return;
         }
 
-        reader = new BufferedReader(new FileReader(file.getAbsolutePath()));
-        writer = new BufferedWriter(new FileWriter(copiedFileName, true));
+        reader = new BufferedReader(new FileReader(file.getAbsolutePath(), StandardCharsets.UTF_8));
+        writer = new BufferedWriter(new FileWriter(copiedFileName, StandardCharsets.UTF_8, true));
 
         writer.append(randomString);
         writer.newLine();
