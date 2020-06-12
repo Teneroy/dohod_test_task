@@ -17,14 +17,16 @@ public class Main {
 
         ArrayList<File> files;
 
+        FileSystemService systemService = new FileSystemService();
+
         switch (args[0]) {
-            case "-readDrives" -> FileSystemUtils.listLocalDrives();
+            case "-readDrives" -> systemService.listLocalDrives();
             case "-searchFiles" -> {
                 if (args.length < 3) {
                     System.out.println("Incorrect parameters");
                     return;
                 }
-                if ((files = FileSystemUtils.searchFileByName(args[1], args[2])) != null)
+                if ((files = systemService.searchFileByName(args[1], args[2])) != null)
                     files.forEach(System.out::println);
             }
             case "-changeFiles" -> {
@@ -32,7 +34,7 @@ public class Main {
                     System.out.println("Incorrect parameters");
                     return;
                 }
-                FileSystemUtils.changeFiles(args[1], args[2]);
+                systemService.changeFiles(args[1], args[2]);
             }
             default -> System.out.println("This command is incorrect");
         }
