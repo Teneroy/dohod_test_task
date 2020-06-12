@@ -141,7 +141,7 @@ public class FileSystemUtils {
         }
 
         files.forEach(file -> {
-            if(getFileExtension(file).equals("txt"))
+            if(!getFileExtension(file).equals("txt"))
                 return;
 
             System.out.println(file.getName());
@@ -154,7 +154,7 @@ public class FileSystemUtils {
         });
 
         files.forEach(file -> {
-            if(getFileExtension(file).equals("txt"))
+            if(!getFileExtension(file).equals("txt"))
                 return;
 
             try {
